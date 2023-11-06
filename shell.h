@@ -10,5 +10,6 @@
 #include <signal.h>
 
 char *_strdup(char *str);
+size_t _strlen(const char *str);
 
 #endif
