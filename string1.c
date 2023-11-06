@@ -8,7 +8,7 @@
  */
 char *_strdup(char *str)
 {
-	int i
+	int i, len;
 	char *ptr = NULL;
 
 	/**check if str is NULL*/
@@ -20,7 +20,8 @@ char *_strdup(char *str)
 	{
 		i++;
 	}
-	ptr = malloc(sizeof(*ptr) * (i + 1));
+	len = i + 1;
+	ptr = malloc(sizeof(*ptr) * len);
 	if (ptr == NULL)
 		return (NULL);
 	for (i = 0; str[i] != '\0'; i++)
@@ -32,8 +33,6 @@ char *_strdup(char *str)
 	return (ptr);
 }
 
-
-#include "shell.h"
 
 /**
  * _strlen - calculate the length of a character string
