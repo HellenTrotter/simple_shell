@@ -14,5 +14,8 @@ size_t _strlen(const char *str);
 void exec(char **args, char **envp, char *cmd);
 char **parse(char *buf);
 void free_arr(char **arr);
+char *_strncpy(char *dest, const char *src, size_t n);
+void *get_input(void);
+int token_count(char *line, char *delim);
 
 #endif
