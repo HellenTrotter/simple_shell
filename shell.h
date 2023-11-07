@@ -11,5 +11,8 @@
 
 char *_strdup(char *str);
 size_t _strlen(const char *str);
+void exec(char **args, char **envp, char *cmd);
+char **parse(char *buf);
+void free_arr(char **arr);
 
 #endif
