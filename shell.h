@@ -13,5 +13,6 @@ char *_strdup(char *str);
 size_t _strlen(const char *str);
 char *_strncpy(char *dest, const char *src, size_t n);
 void *get_input(void);
+int token_count(char *line, char *delim);
 
 #endif
