@@ -17,7 +17,8 @@ char **parse(char *buf);
 void free_arr(char **arr);
 char *_strncpy(char *dest, const char *src, size_t n);
 void *get_input(void);
-int token_count(char *line, char *delim);
+int token_count(char *line, const char *delim);
 int _strcmp(const char *str1, const char *str2);
+char *_strcpy(char *dest, char *src);
 
 #endif
