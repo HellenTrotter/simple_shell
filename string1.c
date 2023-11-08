@@ -97,7 +97,7 @@ int _strcmp(const char *str1, const char *str2)
 	{
 		return (-1);
 	}
-	else 
+	else
 	{
 		return (1);
 	}
