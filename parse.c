@@ -13,7 +13,6 @@ char **parse(char *buf)
 	char **args = NULL;
 	int count, i;
 
-	/**check if buf is empty*/
 	if (buf == NULL)
 		return (NULL);
 	/**duplicate the user input and put in a dynamically alloc memory*/
@@ -35,7 +34,7 @@ char **parse(char *buf)
 		return (NULL);
 	for (i = 0; token != NULL; i++)
 	{
-		args[i] = (malloc(sizeof(char) * (_strlen(token) + 1));
+		args[i] = malloc(sizeof(char) * (_strlen(token) + 1));
 		if (!args[i])
 		{
 			free_arr(args);
@@ -44,8 +43,9 @@ char **parse(char *buf)
 			return (NULL);
 		}
 		_strcpy(args[i], token);
-		token = strtok(NULL, delim)
+		token = strtok(NULL, delim);
 	}
 	args[i] = NULL;
 	free(copy);
+	return (args);
 }
