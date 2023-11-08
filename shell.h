@@ -8,6 +8,7 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <signal.h>
+#include <string.h>
 
 char *_strdup(char *str);
 size_t _strlen(const char *str);
@@ -17,5 +18,6 @@ void free_arr(char **arr);
 char *_strncpy(char *dest, const char *src, size_t n);
 void *get_input(void);
 int token_count(char *line, char *delim);
+int _strcmp(const char *str1, const char *str2);
 
 #endif
