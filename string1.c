@@ -73,3 +73,33 @@ char *_strcpy(char *dest, char *src)
 	dest[a] = '\0';
 	return (dest);
 }
+
+/**
+ * _strcmp - compares two strings character by character
+ * @str1: first string
+ * @str2: second string
+ * Return: an integar
+ */
+
+int _strcmp(const char *str1, const char *str2)
+{
+	while (*str1 != '\0' && *str2 != '\0' && *str1 == *str2)
+	{
+		str1++;
+		str2++;
+	}
+
+	if (*str1 == *str2)
+	{
+		return (0); /* Strings are equal */
+	}
+	else if (*str1 < *str2)
+	{
+		return (-1);
+	}
+	else 
+	{
+		return (1);
+	}
+
+}
