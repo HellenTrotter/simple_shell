@@ -7,7 +7,7 @@
  * Return: total number tokens
  */
 
-int token_count(char *line, char *delim)
+int token_count(char *line, const char *delim)
 {
 	int count = 0;
 	char *token;
