@@ -19,6 +19,16 @@ int main(void)
 		input = get_input();
 		arguments = parse(input);
 
+		if (arguments != NULL && arguments[0] != NULL)
+		{
+			if (_strcmp(arguments[0], "exit") == 0)
+			{
+				free(input);
+				free_arr(arguments);
+				exit(0); /* Exit shell successfully */
+			}
+		}
+
 		/* Free the memory allocated for the input arguments */
 		free(input);
 		free_arr(arguments);
