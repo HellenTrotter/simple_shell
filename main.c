@@ -17,7 +17,6 @@ int main(int ac, char *argv[])
 	char **arguments;
 	char **envp = NULL;
 	char *program = argv[0];
-	int i;
 
 	(void) ac;
 	if (isatty(STDIN_FILENO))
