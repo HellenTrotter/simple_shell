@@ -17,21 +17,24 @@ void *get_input(void)
 	ssize_t read_line;
 	size_t len;
 
+
 	/*Read a line of input from user*/
 	read_line = getline(&input_line, &buff_size, stdin);
+
 
 	/*Check if getline encountered an error or EOF*/
 	if (read_line == -1)
 	{
 		if (input_line != NULL)
 		{
+			perror("Error reading input");
 			free(input_line);
-			exit(0);
 		}
-
-		perror("Error reading input");
-		exit(1);
+		exit(EXIT_SUCCESS);
 	}
+
+	write(STDOUT_FILENO, input_line, read_line);
+
 
 	/*Remove the trailing newline character, if it exists*/
 	len = _strlen(input_line);
