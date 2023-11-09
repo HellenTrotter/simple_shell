@@ -21,6 +21,7 @@ void *get_input(void)
 	/*Read a line of input from user*/
 	read_line = getline(&input_line, &buff_size, stdin);
 
+
 	/*Check if getline encountered an error or EOF*/
 	if (read_line == -1)
 	{
@@ -31,6 +32,8 @@ void *get_input(void)
 		}
 		exit(EXIT_SUCCESS);
 	}
+
+	write(STDOUT_FILENO, input_line, read_line);
 
 
 	/*Remove the trailing newline character, if it exists*/
