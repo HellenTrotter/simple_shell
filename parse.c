@@ -15,23 +15,23 @@ char **parse(char *buf)
 
 	if (buf == NULL)
 		return (NULL);
-	/**duplicate the user input and put in a dynamically alloc memory*/
 	copy = _strdup(buf);
 	if (!copy)
 		return (NULL);
-	/**get num of token in user input*/
+	/*get num of token in user input*/
 	count = token_count(copy, delim);
+	if (count <= 0)
+	{
+		free(copy);
+		return (NULL);
+	}
 	args = malloc(sizeof(char *) * (count + 1));
 	if (!args)
 	{
 		free(copy);
 		return (NULL);
 	}
-
-	/**tokenize user input using strtok*/
 	token = strtok(copy, delim);
-	if (!token)
-		return (NULL);
 	for (i = 0; token != NULL; i++)
 	{
 		args[i] = malloc(sizeof(char) * (_strlen(token) + 1));
