@@ -16,15 +16,10 @@ char **parse(char *buf)
 	if (buf == NULL)
 		return (NULL);
 	copy = _strdup(buf);
-	if (!copy)
+	if (copy == NULL)
 		return (NULL);
 	/*get num of token in user input*/
 	count = token_count(copy, delim);
-	if (count <= 0)
-	{
-		free(copy);
-		return (NULL);
-	}
 	args = malloc(sizeof(char *) * (count + 1));
 	if (!args)
 	{
