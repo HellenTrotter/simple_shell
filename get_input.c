@@ -12,11 +12,10 @@ void *get_input(void);
 
 void *get_input(void)
 {
-	char *input_line;
+	char *input_line = NULL;
 	size_t buff_size = 0;
 	ssize_t read_line;
 	size_t len;
-
 
 	/*Read a line of input from user*/
 	read_line = getline(&input_line, &buff_size, stdin);
@@ -27,14 +26,11 @@ void *get_input(void)
 	{
 		if (input_line != NULL)
 		{
-			perror("Error reading input");
 			free(input_line);
 		}
-		exit(EXIT_SUCCESS);
+		write(STDIN_FILENO, "\n", 1);
+		exit(0);
 	}
-
-	write(STDOUT_FILENO, input_line, read_line);
-
 
 	/*Remove the trailing newline character, if it exists*/
 	len = _strlen(input_line);
