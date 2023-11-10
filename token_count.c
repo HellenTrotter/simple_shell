@@ -9,7 +9,7 @@
  */
 int token_count(char *line, const char *delim)
 {
-	int count;
+	int count = 0;
 	char *copy = NULL, *token = NULL;
 
 	if (line == NULL)
