@@ -26,10 +26,9 @@ int main(int ac, char *argv[])
 			write(STDOUT_FILENO, prmpt, _strlen(prmpt)); /* Display the shell prompt */
 
 			input = get_input();
-
-
+			if (input == NULL)
+				continue;
 			arguments = parse(input);
-
 			if (arguments != NULL && arguments[0] != NULL)
 			{
 				if (_strcmp(arguments[0], "exit") == 0)
