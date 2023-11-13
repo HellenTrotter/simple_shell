@@ -55,6 +55,10 @@ int main(int ac, char *argv[])
 
 		}
 	}
+	else
+	{
+		non_int(program);
+	}
 
 	return (0);
 }
