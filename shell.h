@@ -24,5 +24,6 @@ int _strcmp(const char *str1, const char *str2);
 char *_strcpy(char *dest, char *src);
 void print_environment(void);
 char *_getenv(const char *name);
+void non_int(char *program);
 
 #endif
