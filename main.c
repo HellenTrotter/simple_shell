@@ -18,6 +18,7 @@ int main(int ac, char *argv[])
 	char **envp = NULL;
 	char *program = argv[0];
 
+
 	(void) ac;
 	if (isatty(STDIN_FILENO))
 	{
@@ -26,12 +27,29 @@ int main(int ac, char *argv[])
 			write(STDOUT_FILENO, prmpt, _strlen(prmpt)); /* Display the shell prompt */
 
 			input = get_input();
-			if (input == NULL)
-				continue;
-			arguments = parse(input);
-			exec(arguments, envp, program);
-			/* Free the memory allocated for the input arguments */
 
+
+			arguments = parse(input);
+
+			if (arguments != NULL && arguments[0] != NULL)
+			{
+				if (_strcmp(arguments[0], "exit") == 0)
+				{
+					free(input);
+					free_arr(arguments);
+					exit(0); /* Exit shell successfully */
+				}
+
+				if (_strcmp(input, "env") == 0)
+				{
+					print_environment();
+				}
+
+			}
+
+			exec(arguments, envp, program);
+
+			/* Free the memory allocated for the input arguments */
 			free(input);
 			free_arr(arguments);
 			free(arguments);
