@@ -32,7 +32,7 @@ void print_environment(void);
 void non_int(char *program);
 Node *add_node_end(Node **head, char *str);
 void print_list(const Node *head);
-char *_getenv(char *name);
+char *_getenv(const char *name);
 int _strncmp(char *s1, char *s2, size_t n);
 char *find_path(char *command);
 char *_strcat(char *dest, char *src);
