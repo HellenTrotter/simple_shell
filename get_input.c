@@ -39,11 +39,6 @@ void *get_input(void)
 	{
 		input_line[len - 1] = '\0';
 	}
-	if (input_line[0] == '\0')
-	{
-		free(input_line);
-		return (NULL);
-	}
 
 	return (input_line);
 
