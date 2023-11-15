@@ -11,13 +11,6 @@ void print_environment(void)
 {
 	char **env_ptr = environ;
 
-	/*Check if the environment variable is accessable*/
-	if (environ == NULL)
-	{
-		perror("Error accessing environment variables");
-		return; /*Exit function if an error occurs*/
-	}
-
 	/*Itrate through the environment variables and print them*/
 	while (*env_ptr)
 	{
