@@ -12,6 +12,13 @@
 
 extern char **environ;
 
+/**
+ * struct node - singly linked list
+ * @directory: string - (mallo'ed string)
+ * @link: points to the next node
+ *
+ * Description: singly list node structure
+ */
 typedef struct node
 {
 	char *directory;
@@ -20,7 +27,7 @@ typedef struct node
 
 char *_strdup(char *str);
 size_t _strlen(const char *str);
-void exec(char **args, char **envp, char *cmd);
+int exec(char **args, char **envp, char *cmd);
 char **parse(char *buf);
 void free_arr(char **arr);
 char *_strncpy(char *dest, const char *src, size_t n);
@@ -31,13 +38,15 @@ char *_strcpy(char *dest, char *src);
 void print_environment(void);
 void non_int(char *program);
 Node *add_node_end(Node **head, char *str);
-void print_list(const Node *head);
 char *_getenv(char *name);
 int _strncmp(char *s1, char *s2, size_t n);
 char *find_path(char *command);
 char *_strcat(char *dest, char *src);
-void full_cmd(char *full_path,char *directory,char *cmd);
+void full_cmd(char *full_path, char *directory, char *cmd);
 void free_list(Node *head);
-
+void full_message(char *message, char *cmd, char *arg);
+void handler(int num);
+char *err_message(char **args, char *cmd);
+void cleanup(Node *head, char *ptr);
 
 #endif
