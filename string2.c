@@ -5,7 +5,6 @@
  * @s1: first string
  * @s2: second string
  *@n: num of characters to compre
-
  * Return: An integar less than 0, greater than 0 or equal to zero if s1 is
  * less than,greater than or equal to s2 respectively
  */
