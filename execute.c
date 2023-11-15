@@ -6,6 +6,7 @@
  * @envp: environment variable
  * @cmd: name of executable file
  *
+ * Return: 0 on success, -1 on failure
  */
 int exec(char **args, char **envp, char *cmd)
 {
