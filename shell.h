@@ -53,5 +53,9 @@ ssize_t _getline(char **lineptr, size_t *n, int fd);
 void *_realloc(void *ptr, size_t old_size, size_t new_size);
 char *_memcpy(char *dest, char *src, unsigned int n);
 char *_strtok(char *str, const char *delim);
+int is_digit(char character);
+int atoi(const char *str);
+void print_error(const char *program, const char *message);
+void exit_cmd(char *arg, char **argv);
 
 #endif
