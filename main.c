@@ -35,7 +35,7 @@ int main(int ac, char *argv[])
 			{
 				if (_strcmp(arguments[0], "exit") == 0)
 				{
-					exit_cmd(arguments[1], arguments);
+					exit_shell();
 				}
 
 				if (_strcmp(input, "env") == 0)
