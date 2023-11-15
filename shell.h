@@ -52,5 +52,6 @@ void cleanup(Node *head, char *ptr);
 ssize_t _getline(char **lineptr, size_t *n, int fd);
 void *_realloc(void *ptr, size_t old_size, size_t new_size);
 char *_memcpy(char *dest, char *src, unsigned int n);
+char *_strtok(char *str, const char *delim);
 
 #endif
