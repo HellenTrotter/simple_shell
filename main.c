@@ -13,13 +13,13 @@ int main(int ac, char *argv[]);
 int main(int ac, char *argv[])
 {
 	char *prmpt = "Welcome to our shell ~$$ ";
-	char *input;
+	char *input = NULL;
 	char **arguments;
 	char **envp = NULL;
 	char *program = argv[0];
 
-
 	(void) ac;
+	signal(SIGINT, handler);
 	if (isatty(STDIN_FILENO))
 	{
 		while (1)
@@ -27,8 +27,8 @@ int main(int ac, char *argv[])
 			write(STDOUT_FILENO, prmpt, _strlen(prmpt)); /* Display the shell prompt */
 
 			input = get_input();
-
-
+			if (input == NULL)
+				continue;
 			arguments = parse(input);
 
 			if (arguments != NULL && arguments[0] != NULL)
@@ -48,7 +48,6 @@ int main(int ac, char *argv[])
 			}
 
 			exec(arguments, envp, program);
-
 			/* Free the memory allocated for the input arguments */
 			free(input);
 			free_arr(arguments);
