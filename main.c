@@ -37,6 +37,7 @@ int main(int ac, char *argv[])
 				{
 					free(input);
 					free_arr(arguments);
+					free(arguments);
 					exit(0); /* Exit shell successfully */
 				}
 
