@@ -35,10 +35,7 @@ int main(int ac, char *argv[])
 			{
 				if (_strcmp(arguments[0], "exit") == 0)
 				{
-					free(input);
-					free_arr(arguments);
-					free(arguments);
-					exit(0); /* Exit shell successfully */
+					exit_cmd(arguments[1], arguments);
 				}
 
 				if (_strcmp(input, "env") == 0)
