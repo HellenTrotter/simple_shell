@@ -40,7 +40,7 @@ void setenv_function(char **arguments)
 			{
 				write(STDOUT_FILENO, "Environment variable set successfully!\n", 38);
 			}
-		       	else
+			else
 			{
 				write(STDERR_FILENO, "Failed to set variable.\n", 22);
 			}
