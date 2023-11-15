@@ -10,6 +10,7 @@
 #include <signal.h>
 #include <string.h>
 
+#define BUFSIZE 1024
 extern char **environ;
 
 /**
@@ -48,5 +49,8 @@ void full_message(char *message, char *cmd, char *arg);
 void handler(int num);
 char *err_message(char **args, char *cmd);
 void cleanup(Node *head, char *ptr);
+ssize_t _getline(char **lineptr, size_t *n, int fd);
+void *_realloc(void *ptr, size_t old_size, size_t new_size);
+char *_memcpy(char *dest, char *src, unsigned int n);
 
 #endif
