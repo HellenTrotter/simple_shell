@@ -10,7 +10,7 @@
 
 int print_environment(char **args, char *input)
 {
-	char **env_pnt = environ;
+	char **env_ptr = environ;
 	int i;
 
 	(void)args;
