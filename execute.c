@@ -1,6 +1,41 @@
 #include "shell.h"
 
 /**
+ * main_exec_file - executes command
+ * @args: array of strings
+ * @envp: environment variables
+ * @cmd: name of executable
+ * @input: pointer to user input
+ *
+ * Return: function to be executed
+ */
+
+int main_exec_file(char **args, char **envp, char *cmd, char *input)
+{
+	char *builtin_cmd[] = {"exit", "env"};
+	command_function builtin_function[] = {&exit_shell, &print_environment};
+	int i;
+
+	if (args[0] == NULL)
+	{
+		return (-1);
+	}
+	i = 0;
+
+	while (i < 2)
+	{
+		if (_strcmp(args[0], builtin_cmd[i]) == 0)
+		{
+			return ((*builtin_function[i])(args, input));
+			i++
+
+		}
+	}
+
+	return (exec(argsm envp, cmd));
+}
+
+/**
  * exec - creates a child process and executes commands
  * @args: array of strings
  * @envp: environment variable
