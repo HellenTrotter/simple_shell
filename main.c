@@ -31,6 +31,15 @@ int main(int ac, char *argv[])
 				continue;
 			arguments = parse(input);
 			main_exec_file(arguments, envp, program, input);
+
+			if (_strcmp(arguments[0], "setenv") == 0)
+			{
+				setenv_function(arguments);
+			}
+			else if (_strcmp(arguments[0], "unsetenv") == 0)
+			{
+				unsetenv_function(arguments);
+			}
 			/* Free the memory allocated for the input arguments */
 			free(input);
 			free_arr(arguments);
