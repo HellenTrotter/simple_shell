@@ -56,5 +56,6 @@ char *_memcpy(char *dest, char *src, unsigned int n);
 char *_strtok(char *str, const char *delim);
 int exit_shell(char **args, char *input);
 int print_environment(char **args, char 8input);
+int main_exec_file(char **args, char **envp, char *cmd, char *input);
 
 #endif
