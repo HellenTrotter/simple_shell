@@ -30,22 +30,7 @@ int main(int ac, char *argv[])
 			if (input == NULL)
 				continue;
 			arguments = parse(input);
-
-			if (arguments != NULL && arguments[0] != NULL)
-			{
-				if (_strcmp(arguments[0], "exit") == 0)
-				{
-					exit_shell();
-				}
-
-				if (_strcmp(input, "env") == 0)
-				{
-					print_environment();
-				}
-
-			}
-
-			exec(arguments, envp, program);
+			main_exec_file(arguments, envp, program, input);
 			/* Free the memory allocated for the input arguments */
 			free(input);
 			free_arr(arguments);
