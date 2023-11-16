@@ -32,7 +32,7 @@ int main_exec_file(char **args, char **envp, char *cmd, char *input)
 		}
 	}
 
-	return (exec(argsm envp, cmd));
+	return (exec(args, envp, cmd));
 }
 
 /**
