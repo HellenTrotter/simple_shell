@@ -56,5 +56,9 @@ char *_strtok(char *str, const char *delim);
 int exit_shell(char **args, char *input);
 int print_environment(char **args, char *input);
 int main_exec_file(char **args, char **envp, char *cmd, char *input);
+void setenv_function(char **arguments);
+int set_env(const char *name, const char *value, int overwrite);
+int unset_env(const char *name);
+void unsetenv_function(char **arguments);
 
 #endif
