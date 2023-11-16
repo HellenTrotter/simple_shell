@@ -53,6 +53,7 @@ ssize_t _getline(char **lineptr, size_t *n, int fd);
 void *_realloc(void *ptr, size_t old_size, size_t new_size);
 char *_memcpy(char *dest, char *src, unsigned int n);
 char *_strtok(char *str, const char *delim);
-void exit_shell(void);
+int exit_shell(char **args, char *input);
+int print_environment(char **args, char 8input);
 
 #endif
