@@ -36,7 +36,6 @@ void *get_input(void);
 int token_count(char *line, const char *delim);
 int _strcmp(const char *str1, const char *str2);
 char *_strcpy(char *dest, char *src);
-void print_environment(void);
 void non_int(char *program);
 Node *add_node_end(Node **head, char *str);
 char *_getenv(char *name);
@@ -54,7 +53,7 @@ void *_realloc(void *ptr, size_t old_size, size_t new_size);
 char *_memcpy(char *dest, char *src, unsigned int n);
 char *_strtok(char *str, const char *delim);
 int exit_shell(char **args, char *input);
-int print_environment(char **args, char 8input);
+int print_environment(char **args, char *input);
 int main_exec_file(char **args, char **envp, char *cmd, char *input);
 
 #endif
