@@ -27,7 +27,7 @@ int main_exec_file(char **args, char **envp, char *cmd, char *input)
 		if (_strcmp(args[0], builtin_cmd[i]) == 0)
 		{
 			return ((*builtin_function[i])(args, input));
-			i++
+			i++;
 
 		}
 	}
