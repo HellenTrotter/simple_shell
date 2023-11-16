@@ -26,6 +26,7 @@ typedef struct node
 	struct node *link;
 } Node;
 
+typedef int(*command_function)(char **, char *input);
 char *_strdup(char *str);
 size_t _strlen(const char *str);
 int exec(char **args, char **envp, char *cmd);
