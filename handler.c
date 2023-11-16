@@ -8,8 +8,10 @@
 void handler(int num)
 {
 	char *prompt = "Welcome to our shell ~$$ ";
-	(void)num;
+	size_t len;
 
+	(void)num;
+	len = _strlen(prompt);
 	write(STDERR_FILENO, "\n", 1);
-	write(STDERR_FILENO, prompt, _strlen(prompt));
+	write(STDERR_FILENO, prompt, len);
 }
