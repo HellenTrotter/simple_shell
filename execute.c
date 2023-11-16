@@ -9,7 +9,6 @@
  *
  * Return: function to be executed
  */
-
 int main_exec_file(char **args, char **envp, char *cmd, char *input)
 {
 	char *builtin_cmd[] = {"exit", "env"};
@@ -17,19 +16,13 @@ int main_exec_file(char **args, char **envp, char *cmd, char *input)
 	int i;
 
 	if (args[0] == NULL)
-	{
 		return (-1);
-	}
 	i = 0;
-
 	while (i < 2)
 	{
 		if (_strcmp(args[0], builtin_cmd[i]) == 0)
-		{
 			return ((*builtin_function[i])(args, input));
-			i++;
-
-		}
+		i++;
 	}
 
 	return (exec(args, envp, cmd));
