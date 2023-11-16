@@ -25,6 +25,7 @@ int print_environment(char **args, char *input)
 
 		write(STDOUT_FILENO, env_ptr[i], len);
 		write(STDOUT_FILENO, "\n", 1);
+		i++;
 	}
 
 	return (0);
